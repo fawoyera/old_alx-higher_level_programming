@@ -8,14 +8,25 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *temp;
+	listint_t *temp, *search;
+	int i = 0, j;
 
 	temp = list;
+	search = list->next;
 	while (temp)
 	{
 		if (temp->next == list)
 			return (1);
+
+		for (j = 0; j < i; j++)
+		{
+			if (temp->next == search)
+				return (0);
+			search = search->next;
+		}
+		search = list->next;
 		temp = temp->next;
+		i++;
 	}
 
 	return (0);
