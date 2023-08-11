@@ -21,7 +21,7 @@ int check_cycle(listint_t *list)
 		for (j = 0; j < i; j++)
 		{
 			if (temp->next == search)
-				return (0);
+				return (1);
 			search = search->next;
 		}
 		i++;
