@@ -12,21 +12,21 @@ int check_cycle(listint_t *list)
 	int i = 0, j;
 
 	temp = list;
-	search = list->next;
 	while (temp)
 	{
 		if (temp->next == list)
 			return (1);
 
+		search = list->next;
 		for (j = 0; j < i; j++)
 		{
 			if (temp->next == search)
 				return (0);
 			search = search->next;
 		}
-		search = list->next;
-		temp = temp->next;
 		i++;
+
+		temp = temp->next;
 	}
 
 	return (0);
