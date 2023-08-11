@@ -14,17 +14,14 @@ int check_cycle(listint_t *list)
 	temp = list;
 	while (temp)
 	{
-		if (temp->next == list)
-			return (1);
-
-		search = list->next;
+		i++;
+		search = list;
 		for (j = 0; j < i; j++)
 		{
 			if (temp->next == search)
 				return (1);
 			search = search->next;
 		}
-		i++;
 
 		temp = temp->next;
 	}
