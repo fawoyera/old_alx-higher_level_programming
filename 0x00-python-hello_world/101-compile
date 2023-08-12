@@ -1,0 +1,12 @@
+#!/bin/bash
+
+printf "Compiling $PYFILE ...\n"
+
+python3 -m py_compile $PYFILE
+
+for f in __pycache__/*.cpython-38.pyc; do
+mv -- "$f" "${f%.cpython-38.pyc}.pyc"
+done
+
+mv ./__pycache__/* ./
+rm -r __pycache__/
