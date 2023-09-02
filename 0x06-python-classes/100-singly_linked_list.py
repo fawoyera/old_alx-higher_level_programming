@@ -6,7 +6,12 @@ class Node:
     """Class that defines a node of a singly linked list"""
     def __init__(self, data, next_node=None):
         """Method to initialize the singly linked list"""
-        self.__data = data
+        try:
+            assert type(data) == int
+        except Exception:
+            raise TypeError('data must be an integer')
+        else:
+            self.__data = data
         self.__next_node = next_node
 
     @property
