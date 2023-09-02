@@ -71,7 +71,7 @@ class Square:
     def __str__(self):
         """Method that pretty prints a square using # at a given position"""
         if self.__size == 0:
-            return '\n'
+            return ""
         else:
             result = ""
             for i in range(self.__position[1]):
