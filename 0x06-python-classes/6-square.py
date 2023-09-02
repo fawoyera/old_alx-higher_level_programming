@@ -38,7 +38,9 @@ class Square:
     def position(self, value):
         """Method that sets the position of a square"""
         try:
-            assert type(position[0]) == int and type(position[1]) == int
+            assert type(value) == tuple and len(value) == 2
+            assert type(value[0]) == int and value[0] >= 0
+            assert type(value[1]) == int and value[1] >= 0
         except Exception:
             raise TypeError('position must be a tuple of 2 positive integers')
         else:
@@ -50,11 +52,14 @@ class Square:
 
     def my_print(self):
         """Method that prints a square using # at a given position"""
-        for i in range(self.__position[1]):
-            print()
         if self.__size == 0:
             print()
         else:
+            for i in range(self.__position[1]):
+                print()
             for i in range(self.__size):
-                print("{:s}{:s}".format('_' * self.__position[0],
-                      '#' * self.__size))
+                if self.__position[1] > 0:
+                    print("{:s}".format('#' * self.__size))
+                else:
+                    print("{:s}{:s}".format(" " * self.__position[0],
+                          '#' * self.__size))
