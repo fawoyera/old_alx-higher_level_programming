@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-import math
 """Module that does exactly the same as given python bytecode"""
+import math
 
 
 class MagicClass:
