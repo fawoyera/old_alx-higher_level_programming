@@ -7,7 +7,14 @@ class Square:
     def __init__(self, size=0, position=(0, 0)):
         """Method that initializes an instance of class Square"""
         self.__size = size
-        self.__position = position
+        try:
+            assert type(position) == tuple and len(position) == 2
+            assert type(position[0]) == int and position[0] >= 0
+            assert type(position[1]) == int and position[1] >= 0
+        except Exception:
+            raise TypeError('position must be a tuple of 2 positive integers')
+        else:
+            self.__position = position
 
     @property
     def size(self):
@@ -38,12 +45,9 @@ class Square:
     def position(self, value):
         """Method that sets the position of a square"""
         try:
-            assert type(value) == tuple
-            assert len(value) == 2
-            assert type(value[0]) == int
-            assert value[0] >= 0
-            assert type(value[1]) == int
-            assert value[1] >= 0
+            assert type(value) == tuple and len(value) == 2
+            assert type(value[0]) == int and value[0] >= 0
+            assert type(value[1]) == int and value[1] >= 0
         except Exception:
             raise TypeError('position must be a tuple of 2 positive integers')
         else:
