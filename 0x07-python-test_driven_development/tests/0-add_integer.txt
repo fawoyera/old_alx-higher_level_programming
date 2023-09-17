@@ -1,0 +1,52 @@
+Test file for Function that adds two integers
+Function takes two arguments and return the sum
+Usage:
+	add_integer(a, b)
+Args:
+	a -> first num
+	b -> second num
+
+Return: 
+	a + b
+
+First import "add_integer" function from the "0-add_integer" module
+	>>> import importlib
+	>>> add_integer = importlib.import_module("0-add_integer")
+	>>> add_integer = add_integer.add_integer
+
+Now use it in the Examples below:
+	>>> add_integer(2, 3) 
+	5
+
+	>>> add_integer(-3, 4)
+	1
+
+	>>> add_integer(-1, -1)
+	-2
+
+	>>> add_integer(2.8, 1.2)
+	3
+
+	>>> add_integer(-2.2, 7)
+	5
+
+	>>> add_integer(2)
+	100
+
+	>>> type(c := add_integer(3.5, 7)) is int
+	True
+
+	>>> add_integer("me", 4)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+	>>> add_integer(2, "you")
+	Traceback (most recent call last):
+	...
+	TypeError: b must be an integer
+
+	>>> add_integer()
+	Traceback (most recent call last):
+	...
+	TypeError: add_integer() missing 1 required positional argument: 'a'
