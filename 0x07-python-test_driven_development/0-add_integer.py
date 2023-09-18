@@ -14,8 +14,16 @@ def add_integer(a, b=98):
         raise TypeError("a must be an integer")
     if not type(b) in [int, float]:
         raise TypeError("b must be an integer")
+    if a + b == a + b + 1:
+        raise OverflowError("result too large")
     if type(a) is float:
-        a = int(a)
+        try:
+            a = int(a)
+        except ValueError:
+            raise ValueError("cannot convert float nan to integer")
     if type(b) is float:
-        b = int(b)
+        try:
+            b = int(b)
+        except ValueError:
+            raise ValueError("cannot convert float nan to integer")
     return a + b
