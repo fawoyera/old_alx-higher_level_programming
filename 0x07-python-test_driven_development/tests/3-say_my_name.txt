@@ -1,0 +1,46 @@
+Test file for function that print full name given the first name and last name
+Function Prototype:
+	say_my_name(first_name, last_name="")
+
+Args:	first_name
+	last_name
+
+Returns:
+	None
+
+First import the function "say_my_name" from the module "3-say_my_name":
+	>>> import importlib
+	>>> say_my_name = importlib.import_module("3-say_my_name")
+	>>> say_my_name = say_my_name.say_my_name
+
+Now test using the following examples:
+	>>> say_my_name("Oluwafemi", "Awoyera")
+	My name is Oluwafemi Awoyera
+
+	>>> say_my_name("Bola")
+	My name is Bola 
+
+	>>> say_my_name(4, "Ademola")
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
+
+	>>> say_my_name("Musiliu", 3.40)
+	Traceback (most recent call last):
+	...
+	TypeError: last_name must be a string
+
+	>>> say_my_name(3, 7)
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
+
+	>>> say_my_name(5)
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
+
+	>>> say_my_name()
+	Traceback (most recent call last):
+	...
+	TypeError: say_my_name() missing 1 required positional argument: 'first_name'
