@@ -1,0 +1,41 @@
+Test file for function that print a square with character "#" given the size of the square
+Function prototype:
+	print_square(size)
+
+Args:
+	size - the size of the square
+
+Return:
+	None
+
+First import the function "print_square" from the module "4-print_square":
+	>>> import importlib
+	>>> print_square = importlib.import_module("4-print_square")
+	>>> print_square = print_square.print_square
+
+Now test with the following examples:
+	>>> print_square("me")
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
+
+	>>> print_square(-1)
+	Traceback (most recent call last):
+	...
+	ValueError: size must be >= 0
+
+	>>> print_square(-3.24)
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
+
+	>>> print_square(4)
+	####
+	####
+	####
+	####
+
+	>>> print_square()
+	Traceback (most recent call last):
+	...
+	TypeError: print_square() missing 1 required positional argument: 'size'
