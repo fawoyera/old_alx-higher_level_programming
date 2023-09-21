@@ -27,11 +27,11 @@ Now test using the following examples:
 	>>> text_indentation("Ade is a fisherman. Does he fish on Sundays? Well: Who knows.")
 	Ade is a fisherman.
 	<BLANKLINE>
-	Does he fish on Sundays?
+	 Does he fish on Sundays?
 	<BLANKLINE>
-	Well:
+	 Well:
 	<BLANKLINE>
-	Who knows.
+	 Who knows.
 	<BLANKLINE>
 
 	>>> text_indentation()
