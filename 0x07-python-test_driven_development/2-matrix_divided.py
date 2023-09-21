@@ -26,6 +26,8 @@ def matrix_divided(matrix, div):
             raise TypeError("Each row of the matrix must have the same size")
     if not type(div) in [int, float]:
         raise TypeError("div must be a number")
+    if div == div + 1:
+        raise TypeError("div must be a number")
     if div == 0:
         raise ZeroDivisionError("division by zero")
     return list(list(float("{:.2f}".format(element / div))

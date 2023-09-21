@@ -40,6 +40,11 @@ Now Use it in the following examples:
 	...
 	TypeError: div must be a number
 
+	>>> matrix_divided([[1, 2], [2, 3]], float('inf'))
+	Traceback (most recent call last):
+	...
+	TypeError: div must be a number
+
 	>>> matrix_divided([[2, 4], [5, 9]], 0)
 	Traceback (most recent call last):
 	...
