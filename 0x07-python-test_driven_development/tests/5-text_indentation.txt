@@ -1,0 +1,40 @@
+Test file for function that indent a text by printing 2 new line characters after ., ? and :
+Function prototype:
+	text_indentation(text)
+
+Arguments:
+	text - the text to indent
+
+Return:
+	None
+
+First import the function "text_indentation" from the module "5-text_indentation"
+	>>> import importlib
+	>>> text_indentation = importlib.import_module("5-text_indentation")
+	>>> text_indentation = text_indentation.text_indentation
+
+Now test using the following examples:
+	>>> text_indentation(9)
+	Traceback (most recent call last):
+	...
+	TypeError: text must be a string
+
+	>>> text_indentation(4.53)
+	Traceback (most recent call last):
+	...
+	TypeError: text must be a string
+
+	>>> text_indentation("Ade is a fisherman. Does he fish on Sundays? Well: Who knows.")
+	Ade is a fisherman.
+	<BLANKLINE>
+	Does he fish on Sundays?
+	<BLANKLINE>
+	Well:
+	<BLANKLINE>
+	Who knows.
+	<BLANKLINE>
+
+	>>> text_indentation()
+	Traceback (most recent call last):
+	...
+	TypeError: text_indentation() missing 1 required positional argument: 'text'
