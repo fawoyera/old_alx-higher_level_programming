@@ -12,7 +12,7 @@ def lazy_matrix_mul(m_a, m_b):
     """
     Module to multiply two matrices (m_a) and (m_b)
     """
-    if not type(m_a) is list:
+    """if not type(m_a) is list:
         raise TypeError("m_a must be a list")
     if not type(m_b) is list:
         raise TypeError("m_b must be a list")
@@ -44,6 +44,7 @@ def lazy_matrix_mul(m_a, m_b):
             raise TypeError("each row of m_b must be of the same size")
     if len(m_a[0]) != len(m_b):
         raise ValueError("m_a and m_b can't be multiplied")
+    """
 
     """ïnitialize result matrix with zeros"""
     result = [[0 for j in range(len(m_b[0]))] for i in range(len(m_a))]
