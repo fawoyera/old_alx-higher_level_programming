@@ -4,6 +4,7 @@
 import unittest
 max_integer = __import__('6-max_integer').max_integer
 
+
 class TestMaxInteger(unittest.TestCase):
     """
     Class to test the method 'max_integer'
@@ -18,7 +19,7 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer(), None)
 
     def test_type(self):
-        """Test case method to check if Exception is raised 
+        """Test case method to check if Exception is raised
            when input is not a list of integers
         """
         self.assertRaises(TypeError, max_integer, ['a', 5, "sit"])
