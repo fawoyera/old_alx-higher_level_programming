@@ -82,5 +82,5 @@ class Rectangle:
         """
         repr method to print class instance (object)
         """
-        return "Rectangle(" + str(self.__width) + ","\
+        return "Rectangle(" + str(self.__width) + ", "\
                             + str(self.__height) + ")"
