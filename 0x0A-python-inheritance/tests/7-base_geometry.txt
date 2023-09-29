@@ -1,0 +1,61 @@
+Test file for the module '7-base_geometry'
+
+Module defines a class with two public instance methods 'area' and 'integer_validator'
+
+Prototype for method 'area':
+	area()
+
+Args:
+	None
+
+Return:
+	raises Exception
+
+Prototype for method 'integer_validator':
+	integer_validator(name, value)
+
+Args: 
+	name --> string describing the integer
+	value --> value of the integer
+
+Return:
+	raise TypeError if name is not int 
+	raise ValueError if name is less than or equal to 0
+
+First import the class 'BaseGeometry' from the module '7-base_geometry':
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Then test with the following examples:
+	>>> BaseGeometry().area() # doctest: +ELLIPSIS
+	Traceback (most recent call last):
+	...
+	Exception: area() is not implemented
+
+	>>> BaseGeometry().integer_validator("my_int", 12)
+	
+	>>> BaseGeometry().integer_validator("width", 89)
+
+	>>> BaseGeometry().integer_validator("name", "John") # doctest: +ELLIPSIS
+	Traceback (most recent call last):
+	...
+	TypeError: name must be an integer
+
+	>>> BaseGeometry().integer_validator("age", 0) # doctest: +ELLIPSIS
+	Traceback (most recent call last):
+	...
+	ValueError: age must be greater than 0
+
+	>>> BaseGeometry().integer_validator("distance", -5) # doctest: +ELLIPSIS
+	Traceback (most recent call last):
+	...
+	ValueError: distance must be greater than 0
+
+	>>> BaseGeometry().integer_validator("mile") # doctest: +ELLIPSIS
+	Traceback (most recent call last):
+	...
+	TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+	>>> BaseGeometry().integer_validator() # doctest: +ELLIPSIS
+	Traceback (most recent call last):
+	...
+	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
