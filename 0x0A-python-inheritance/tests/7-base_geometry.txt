@@ -59,3 +59,28 @@ Then test with the following examples:
 	Traceback (most recent call last):
 	...
 	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+	>>> BaseGeometry().integer_validator("name", (1,)) # doctest: +ELLIPSIS
+	Traceback (most recent call last):
+	...
+	TypeError: name must be an integer
+
+	>>> BaseGeometry().integer_validator("name", [2]) # doctest: +ELLIPSIS
+	Traceback (most recent call last):
+	...
+	TypeError: name must be an integer
+
+	>>> BaseGeometry().integer_validator("name", True) # doctest: +ELLIPSIS
+	Traceback (most recent call last):
+	...
+	TypeError: name must be an integer
+
+	>>> BaseGeometry().integer_validator("name", {1, 5}) # doctest: +ELLIPSIS
+	Traceback (most recent call last):
+	...
+	TypeError: name must be an integer
+
+	>>> BaseGeometry().integer_validator("name", None) # doctest: +ELLIPSIS
+	Traceback (most recent call last):
+	...
+	TypeError: name must be an integer
