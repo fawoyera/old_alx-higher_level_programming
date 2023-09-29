@@ -36,5 +36,4 @@ Then test using the following examples:
 
 	>>> my_list5 = MyList(); new_list = my_list5.print_sorted(); new_list == []
 	[]
-	True
-
+	False
