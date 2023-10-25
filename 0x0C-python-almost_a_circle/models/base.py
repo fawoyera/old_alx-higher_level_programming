@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """Module that defines a base class"""
-import json, csv
+import json
+import csv
+from turtle import *
 
 
 class Base:
@@ -73,7 +75,7 @@ class Base:
         with open(filename, "w", newline='') as fp:
             writer = csv.DictWriter(fp, fieldnames=fieldnames)
             writer.writerows(list_objs_dict)
-    
+
     @classmethod
     def load_from_file_csv(cls):
         """class method to load instance of class from CSV file"""
@@ -84,11 +86,49 @@ class Base:
             fieldnames = ['id', 'size', 'x', 'y']
         try:
             with open(filename, "r", newline='') as fp:
-                return [cls.create(**dicti) for dicti in [{k: int(v) for k,v in dict.items()} for dict in csv.DictReader(fp, fieldnames=fieldnames)]]
+                return [cls.create(**dicti) for dicti in [{k: int(v) for k, v in dict.items()} for dict in csv.DictReader(fp, fieldnames=fieldnames)]]
         except FileNotFoundError:
             return []
 
     @staticmethod
     def draw(list_rectangles, list_squares):
         """static method to draw rectangles and squares to GUI"""
-        pass
+        list_rec_dict = [rec.to_dictionary() for rec in list_rectangles]
+        list_sq_dict = [sq.to_dictionary() for sq in list_squares]
+
+        color('blue')
+        up()
+        for rec in list_rec_dict:
+            home()
+            forward(rec['x'])
+            left(90)
+            forward(rec['y'])
+            right(90)
+            down()
+            forward(rec['width'])
+            left(90)
+            forward(rec['height'])
+            left(90)
+            forward(rec['width'])
+            left(90)
+            forward(rec['height'])
+            left(90)
+            up()
+
+        color('green')
+        for sq in list_sq_dict:
+            home()
+            forward(sq['x'])
+            left(90)
+            forward(sq['y'])
+            right(90)
+            down()
+            forward(sq['size'])
+            left(90)
+            forward(sq['size'])
+            left(90)
+            forward(sq['size'])
+            left(90)
+            forward(sq['size'])
+            left(90)
+            up()
